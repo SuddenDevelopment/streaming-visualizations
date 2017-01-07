@@ -26,3 +26,7 @@ arrData=[
 - render
 - addData
 - prune
+
+## Refeernces
+
+https://syntagmatic.github.io/parallel-coordinates/
