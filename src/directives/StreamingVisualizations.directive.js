@@ -1,4 +1,4 @@
-angular.module("ngGlobeView", ["ngGlobeViewService", "ngGlobeViewConstant"]).directive('globeView', function(){
+angular.module("ngStreamingVisualizationsView", ["ngGlobeViewService", "ngGlobeViewConstant"]).directive('streamingVisualizationsView', function(){
 	'use strict';
 	return {
 		 restrict:'A'

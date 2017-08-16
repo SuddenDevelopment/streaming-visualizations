@@ -1,5 +1,5 @@
 //----====|| Angular App ||====----\\
-var app = angular.module('globeViewDemo', ['ngMaterial', 'ngGlobeView']).config(function($mdThemingProvider) {
+var app = angular.module('globeViewDemo', ['ngMaterial', 'ngStreamingVisualizationsView']).config(function($mdThemingProvider) {
     $mdThemingProvider.theme('default').dark();
 });
 
