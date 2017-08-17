@@ -5,10 +5,15 @@ angular.module("ngGlobeViewService", ["ngGlobeViewConstant"])
   _lines = [], _points = [], _lineColors = [], _overlay, _rotation = { x: 0, y: 0 },
   _ctx = document.querySelector('#canvas').getContext('2d');
 
-  // _initialize();
-  return;
+  this.addData = function () {
+    console.log("Add data called.");
+  };
 
-  function _initialize() {
+  this.prune = function () {
+    console.log("Prune called.");
+  };
+
+  this.render = function() {
     _drawConfig = globeViewCNST.drawConfig;
     _drawConfig.WIDTH = window.innerWidth;      // Canvas width
     _drawConfig.HEIGHT = window.innerHeight;    // Canvas height
