@@ -16,7 +16,7 @@ angular.module("ngGlobeViewConstant", []).constant('globeViewCNST', {
         FAR: 150000, // Draw distance
 
         // Use the visibility API to avoid creating a ton of data when the user is not looking
-        VISIBLE: false,
+        VISIBLE: true,
         DEBUG: false, // Show stats or not
         TARGET: {
             x: 0,
