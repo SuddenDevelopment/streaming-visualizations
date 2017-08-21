@@ -7,6 +7,7 @@ angular.module("ngStreamingVisualizationsView", ["ngGlobeViewService", "ngGlobeV
 				var visualization = $scope.visualization;
 				switch (visualization) {
 					case "globe":
+					console.log('show globe');
 					$scope.visualizationSV = globeViewSV;
 					$scope.visualizationCNST = globeViewCNST;
 					break;
@@ -42,7 +43,7 @@ angular.module("ngStreamingVisualizationsView", ["ngGlobeViewService", "ngGlobeV
 			var FAR = 150000;                   // Draw distance
 
 			// Use the visibility API to avoid creating a ton of data when the user is not looking
-			var VISIBLE = false;
+			var VISIBLE = true;
 
 			var DEBUG = false; // Show stats or not
 
@@ -126,7 +127,8 @@ angular.module("ngStreamingVisualizationsView", ["ngGlobeViewService", "ngGlobeV
 			  var shader = Shaders['earth'];
 			  var uniforms = THREE.UniformsUtils.clone(shader.uniforms);
 
-			  uniforms['texture'].value = THREE.ImageUtils.loadTexture('./images/world2.png');
+			  //uniforms['texture'].value = THREE.ImageUtils.loadTexture('./images/world2.png');
+			  uniforms['texture'].value = new THREE.TextureLoader().load('./images/world2.png');
 
 			  var material = new THREE.ShaderMaterial({
 			    uniforms: uniforms,
@@ -461,7 +463,7 @@ angular.module("ngStreamingVisualizationsView", ["ngGlobeViewService", "ngGlobeV
 			}
 
 			window.addEventListener('resize', onWindowResize);
-
+			//console.log('go');
 			addEarth();
 			addOverlay();
 			animate();
