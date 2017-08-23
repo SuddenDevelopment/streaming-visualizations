@@ -1,7 +1,7 @@
 angular.module("ngGlobeViewService", ["ngGlobeViewConstant"])
     .service('globeViewSV', ['globeViewCNST', function(globeViewCNST) {
         // couple of constants
-        var _drawConfig, _shaders, _renderer, _mapDiv, _camera, _scene, _geoms, _tweens = [],
+        var _drawConfig, _shaders, _renderer, _mapDiv, _camera, _scene, _geoms =[], _tweens = [],
             _lines = [],
             _points = [],
             _lineColors = [],
@@ -12,8 +12,8 @@ angular.module("ngGlobeViewService", ["ngGlobeViewConstant"])
             _target,
             _ctx = document.querySelector('#canvas').getContext('2d');
 
-        this.addData = function() {
-            console.log("Add data called.");
+        this.addData = function(src, dst) {
+          addData(src, dst);
         };
 
         this.prune = function() {
@@ -48,7 +48,6 @@ angular.module("ngGlobeViewService", ["ngGlobeViewConstant"])
             _scene = new THREE.Scene();
             _scene.add(_camera);
 
-            var _geoms = [];
             (function() {
                 for (var i = 0; i < 500; i++) {
                     _geoms[i] = [];

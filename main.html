@@ -1,28 +1,63 @@
 <!DOCTYPE html>
 <html ng-app='globeViewDemo'>
+
 <head>
-  <title></title>
-  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-  <link rel="stylesheet" href="./styles/vendor/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="./styles/app.css">
+    <title></title>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link rel="stylesheet" href="./styles/vendor/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./styles/app.css">
 </head>
+
 <body ng-controller='globeViewDemoController'>
-<br/><br/>
-<div>Feature Grid Demo</div>
-<div>
-  <div streaming-visualizations-view visualization="globe"></div>
-  <div id="globe"></div>
-  <canvas id="canvas" width="1024" height="512" style="display: none;"></canvas>
-</div>
+    <br/>
+    <div>Feature Grid Demo</div>
+    <br/>
+    <div>
+        <md-content>
+            <div layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Source Lattitude</label>
+                    <input type="number" ng-model="coordinateData.source.lat">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Source Longitude</label>
+                    <input type="number" ng-model="coordinateData.source.lon">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Soruce Color</label>
+                    <input ng-model="coordinateData.source.color">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Destination Lattitude</label>
+                    <input type="number" ng-model="coordinateData.destination.lat">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Destination Longitude</label>
+                    <input type="number" ng-model="coordinateData.destination.lon">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Destination Color</label>
+                    <input ng-model="coordinateData.destination.color">
+                </md-input-container>
+                <md-button class="md-raised md-primary" style="margin-right: 20px;" ng-click="mapData()">Map Data</md-button>
+            </div>
+        </md-content>
+    </div>
+    <div>
+        <div streaming-visualizations-view visualization="globe"></div>
+        <div id="globe"></div>
+        <canvas id="canvas" width="1024" height="512" style="display: none;"></canvas>
+    </div>
 </body>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/threejs/r84/three.min.js"></script>
-  <script src="./index.js"></script>
-  <script src="./src/constants/GlobeView.constant.js"></script>
-  <script src="./src/services/GlobeView.service.js"></script>
-  <script src="./src/directives/StreamingVisualizations.directive.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r84/three.min.js"></script>
+<script src="./index.js"></script>
+<script src="./src/constants/GlobeView.constant.js"></script>
+<script src="./src/services/GlobeView.service.js"></script>
+<script src="./src/directives/StreamingVisualizations.directive.js"></script>
+
 </html>
