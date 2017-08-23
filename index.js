@@ -21,7 +21,7 @@ app.controller('globeViewDemoController', [
         };
 
         $scope.mapData = function() {
-            $rootScope.$broadcast('MAP_DATA:GLOBE', angular.copy($scope.coordinateData));
+            $rootScope.$broadcast('ADD_DATA', angular.copy($scope.coordinateData));
         }
     }
 ]);
