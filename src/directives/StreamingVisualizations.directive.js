@@ -3,7 +3,7 @@ angular.module("ngStreamingVisualizationsView", ["ngGlobeViewService", "ngGlobeV
     return {
         restrict: 'A',
         controller: ["$scope", "globeViewSV", "globeViewCNST", function($scope, globeViewSV, globeViewCNST) {
-            var _addDataEventListner;
+            var _addDataEventListner, _renderGraphEventListner;
 
             $scope.initialize = _initialize;
             $scope.render = _render;
@@ -21,6 +21,10 @@ angular.module("ngStreamingVisualizationsView", ["ngGlobeViewService", "ngGlobeV
 
                 _addDataEventListner = $scope.$on('ADD_DATA', function(event, data) {
                     $scope.addData(data.source, data.destination)
+                });
+
+                _renderGraphEventListner = $scope.$on('RENDER_DATA', function() {
+                    $scope.render();
                 });
 
                 $scope.$on('$destroy', function() {
@@ -42,6 +46,7 @@ angular.module("ngStreamingVisualizationsView", ["ngGlobeViewService", "ngGlobeV
 
             function _removeListener() {
                 _addDataEventListner();
+                _renderGraphEventListner();
             }
         }],
         link: function(scope, element, attrs) {
