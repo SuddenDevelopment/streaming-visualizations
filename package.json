@@ -1,0 +1,15 @@
+{
+  "name": "GlobeView",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SuddenDevelopment/RecordQue.git"
+  },
+  "author": "Anthony Aragues <anthony.aragues@gmail.com> (http://suddendevelopment.com)",
+  "license": "ISC"
+}

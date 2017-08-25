@@ -29,6 +29,7 @@ arrData=[
 
 ## Chart Types
 
+1. Globe
 1. Map
 1. Parallel Coordinates
 1. Scatter plot
