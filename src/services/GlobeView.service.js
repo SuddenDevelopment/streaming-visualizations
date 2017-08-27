@@ -86,7 +86,7 @@ angular.module("ngGlobeViewService", ["ngGlobeViewConstant"])
                 uniforms = THREE.UniformsUtils.clone(shader.uniforms),
                 material, mesh;
 
-            uniforms['texture'].value = THREE.ImageUtils.loadTexture('./images/world2.png');
+            uniforms['texture'].value = THREE.ImageUtils.loadTexture('./img/world2.png');
 
             material = new THREE.ShaderMaterial({
                 uniforms: uniforms,
